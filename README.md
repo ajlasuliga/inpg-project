@@ -11,6 +11,26 @@ int wynik;
 char tn;
  
 float zestaw(int suma);
+
+int rozklad_liczby(unsigned short rozklad[4], unsigned long liczba)
+{
+  int n;
+  for(n=0;n<4;n++) rozklad[n]=0;    // czysci tablice
+  if(0>liczba>999) return -1;       // sprawdza czy liczba jest prawidlowa
+  for(n=3;n>0;n--) {
+    if(liczba<20) {                 // jesli liczba(reszta)<20 jednostki=liczba
+      rozklad[1]=liczba;
+      break;
+    }
+    rozklad[n]=liczba/pow(10,n-1);  // wyznaczamy kolejne cyfry liczby przez dzielenie przez potegi 10
+    liczba%=(int)pow(10,n-1);       // liczbe zmniejszamy kolejno o setki i dziesiatki
+  }
+  if(rozklad[1]==0 && rozklad[2]==0 && rozklad[3]==0) rozklad[0]=0;           // warunki okreslajace forma gramatyczna
+    else if(rozklad[1]==1 && rozklad[2]==0 && rozklad[3]==0) rozklad[0]=1;    // przyrostka
+      else if(rozklad[1]<=4 && rozklad[1]>1) rozklad[0]=2;
+        else rozklad[0]=3;
+  return 0;
+}
  
 int main()
 {
