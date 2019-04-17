@@ -101,6 +101,19 @@ int main()
  
     return 0;
 }
+unsigned long liczba;
+  short n;
+  unsigned short rozklad[4]={0,0,0,0};   // tablica rozkladu liczby elementy to kolejno forma gramatyczna przyrostka, jednosci, dziesiatki, setki
+  char *J[]={"","jeden","dwa","trzy","cztery","piec","szesc","siedem ","osiem","dziewiec","dziesiec","jedenascie","dwanascie","trzynascie","czternascie","pietnascie","szesnascie","siedemnascie","osiemnascie","dziewietnascie"};
+  char *D[]={"","dziesiec","dwadziescia","trzydziesci","czterdziesci","piedziesiat","szezdziesiat","siedemdziesiat","osiemdziesiat","dziewiedziesiat"};
+  char *S[]={"","sto","dwiescie","trzysta","czterysta","piecset","szescset","siedemset","osiemset","dziewiecset"};
+  char *T[][4]={{"","miliard","miliardy","miliardow"},
+                {"","milion","miliony","milionow"},
+                {"","tysiac","tysiace","tysiecy"},
+                {"","","",""}};
+
+  printf("podaj liczbe: ");
+  scanf("%d",&liczba);    
  
 float zestaw(int suma)
 {
