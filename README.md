@@ -73,3 +73,18 @@ int main()
         }
         break;
         }
+       getchar();
+        getchar();
+        system("clear");
+ 
+    }
+ 
+    return 0;
+}
+ 
+float zestaw(int suma)
+{
+    suma=((b*20)+(c*10)+(d*1));
+ 
+    return suma;
+}
